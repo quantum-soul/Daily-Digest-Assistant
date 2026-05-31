@@ -8,12 +8,23 @@
 # 代码会自动将单词两两组合成高优先级短语（如 agent+skill → "agent skill"）
 # 专有框架名打分权重最高
 keywords:
-  - LLM Agent
-  - skill learning
-  - skill retrieval
-  - skill refinement
-  - skill evolution
-  - openclaw
+  - LLM quantization
+  - post-training quantization
+  - quantization-aware training
+  - inference acceleration
+  - model compression
+  - speculative decoding
+  - on-device inference
+  - edge inference
+  - LLM inference
+  - token pruning
+  - KV cache
+  - PTQ
+  - QAT
+  - low-bit
+  - INT4
+  - INT8
+  - quantized
 
 # ── arxiv 分类 ──────────────────────────────────────────────
 # 留空则搜索全部分类。常用：cs.AI cs.LG cs.RO cs.CL cs.CV
@@ -21,7 +32,8 @@ categories:
   - cs.AI
   - cs.CL
   - cs.LG
-  - cs.RO
+  - cs.CV
+  - cs.AR
 
 # ── 推送数量与质量 ──────────────────────────────────────────
 # 每日最多推送篇数（LLM 从候选中精选）
@@ -30,21 +42,21 @@ max_papers: 10
 # LLM 相关性评分门槛（1-10）
 # 低于此分的论文不推送，即使凑不满 max_papers 也不推
 # 建议范围：6（默认，平衡） / 7-8（严格） / 4-5（宽松）
-min_score: 5
+min_score: 6
 
 # arxiv 初始搜索数量，由 LLM 从中筛选出 max_papers 篇
 # 建议 candidate_pool >= max_papers * 3
-candidate_pool: 80
+candidate_pool: 50
 
 # ── 邮件与 LLM 配置 ─────────────────────────────────────────
 # 发件邮箱服务商（163 / gmail / qq）
-smtp_provider: "163"
+smtp_provider: "qq"
 
 # LLM 服务商
 # 内置可选：minimax / claude / openai / deepseek / zhipu / moonshot / qwen
 # 也可填自定义名称（需在下方 custom_llm 中定义）
 # 对应 API Key 填写到 GitHub Secrets 的 LLM_API_KEY
-llm_provider: minimax
+llm_provider: deepseek
 
 # ── 自定义 LLM 提供商（可选）────────────────────────────────
 # 当你使用的 API 不在内置列表中时，在此配置。

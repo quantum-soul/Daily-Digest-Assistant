@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月01日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月01日 · 星期一</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">📕 小红书 <b>10</b> 条</div>
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.30580v1" target="_blank">Speculative Decoding Across Languages</a>
+                </div>
+                <div class="card-byline">Nirajan Paudel, Michael Ginn, Luc De Nardi, Alexis Palmer</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究跨语言投机解码，分析小模型在非英语语言中的效率瓶颈。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30580v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30580v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文探讨投机解码在多语言场景下的失效问题，发现小 draft 模型在非英语语言中性能严重下降。核心创新是提出并对比三种跨语言投机解码策略，包括多语言草稿模型与语言适配方法。实验表明，适当策略可显著提升多语言推理加速效果，缩小语言间差距。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">on-device inference</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 4</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1cfc4d000000003503b3f0?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VVSw7O-QXT-tt0bqZxXo8oI=&amp;xsec_source=pc_search" target="_blank">苹果押注端侧AI</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  报道苹果将在WWDC2026展示端侧AI，利用知识蒸馏将大模型压缩到设备本地运行。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1cfc4d000000003503b3f0?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VVSw7O-QXT-tt0bqZxXo8oI=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.30852v1" target="_blank">Speculative Pipeline Decoding: Higher-Accruacy and Zero-Bubble Speculation via Pipeline Parallelism</a>
+                </div>
+                <div class="card-byline">Yijiong Yu, Huazheng Wang, Shuai Yuan, Ruilong Ren, Ji Pei</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出流水线并行投机解码框架SPD，实现高精度零气泡推理加速。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30852v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30852v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对投机解码中多token预测困难与串行延迟问题，提出Speculative Pipeline Decoding (SPD)。核心创新是利用流水线并行打破传统验证瓶颈，使草稿与验证阶段重叠执行，消除气泡延迟。实验表明，SPD在多场景下显著提升推理吞吐量，且保持生成质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 10</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1a9ded0000000008025da7?xsec_token=AB7LRBS16tH8Q1LK3STgLXlxUp55CVForvfKVFgqHQF40=&amp;xsec_source=pc_search" target="_blank">牛津&amp;NVIDIA重塑LLM KV缓存优化范式</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  牛津与NVIDIA提出KV-CAT持续预训练方案，引导模型生成易压缩KV表征，优化长上下文推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1a9ded0000000008025da7?xsec_token=AB7LRBS16tH8Q1LK3STgLXlxUp55CVForvfKVFgqHQF40=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">INT4</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.31035v1" target="_blank">MixFP4: Enhancing NVFP4 with Adaptive FP4/INT4 Block Representations</a>
+                </div>
+                <div class="card-byline">Jiaxiang Zou, Yonghao Chen, Ruilong Wu, Xinyu Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出MixFP4混合精度格式，自适应FP4/INT4块表示提升低比特量化效果。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.31035v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.31035v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对NVFP4单一格式无法适配异构张量分布的问题，提出MixFP4混合微格式方案。核心创新是自适应选择FP4或INT4块表示，无需改变标准矩阵运算流程。实验表明，MixFP4在LLM低比特量化中显著提升模型精度与吞吐量，优于现有统一格式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">PTQ</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 14</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a0c19c30000000036003d8c?xsec_token=ABmtsPAL_TVHt-KYUCuINLHgCrKXGvFFxIQ7gnygmAHgU=&amp;xsec_source=pc_search" target="_blank">中大：自适应控制残差强度的低比特量化优化</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  提出MARR方法，通过自适应控制残差强度优化低比特PTQ，解决跨层误差累积问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a0c19c30000000036003d8c?xsec_token=ABmtsPAL_TVHt-KYUCuINLHgCrKXGvFFxIQ7gnygmAHgU=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.31105v1" target="_blank">GRKV: Global Regression for Training-Free KV Cache Compression in Long-Context LLMs</a>
+                </div>
+                <div class="card-byline">Junjie Peng, You Wu, Haoyi Wu, Jialong Han, Xiaohua Xie</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出GRKV全局回归方法，实现免训练的长上下文KV缓存压缩。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.31105v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.31105v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长上下文LLM中KV缓存内存开销大问题，提出全局回归方法GRKV进行免训练压缩。核心创新是使用回归模型预测重要键值对，替代传统逐段驱逐策略，保留连续跨度信息。实验表明，GRKV在多种长上下文任务中大幅降低内存占用，且精度损失低于现有方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">INT4</span>
+                    
+                  </div>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1cffa00000000035031aaa?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VeeIake5BKOFm1PLZaxJpAc=&amp;xsec_source=pc_search" target="_blank">面壁智能MiniCPM5-1B最强端侧基座</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  面壁智能开源端侧基座MiniCPM5-1B，INT4量化后仅0.5GB，可在手机等边缘设备运行。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1cffa00000000035031aaa?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VeeIake5BKOFm1PLZaxJpAc=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.31124v1" target="_blank">QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer</a>
+                </div>
+                <div class="card-byline">Zhizhen Pan, Hesong Wang, Huan Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出QVGGT，对1.2B参数VGGT模型进行后训练量化，实现边缘部署。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.31124v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.31124v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对VGGT模型参数量大难以部署在无人机等边缘设备的问题，提出后训练量化方法QVGGT。核心创新是设计专用于视觉几何任务的量化方案，压缩模型大小同时保持3D估计精度。实验表明，QVGGT在资源受限平台上显著降低内存占用与推理延迟，精度损失极小。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 30</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1cdc040000000035020bb9?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VYVxU_7VNHPDeCfHsGbpyD4=&amp;xsec_source=pc_search" target="_blank">DFlash：一次 draft 16 个 token</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  DFlash使用block diffusion模型并行草拟多个token，突破speculative decoding的串行瓶颈。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1cdc040000000035020bb9?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VYVxU_7VNHPDeCfHsGbpyD4=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.30574v1" target="_blank">Probing the Prompt KV Cache: Where It Becomes Dispensable</a>
+                </div>
+                <div class="card-byline">Vinayshekhar Bannihatti Kumar, Manoj Ghuhan Arivazhagan, Disha Makhija, Rashmi Gangadharaiah</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统探究提示KV缓存冗余性，揭示不同层与解码阶段的压缩潜力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30574v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30574v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文通过控制变量实验，分析提示KV缓存在解码过程中的冗余模式。核心创新是精确量化了哪些层、何时以及何种形式可替换或丢弃缓存条目而不影响任务。结论表明，深层缓存冗余度高，为设计自适应KV压缩策略提供了理论依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">INT4</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 6</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1c2547000000003600174e?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VSwLmhw7s4LOjru37zWyujs=&amp;xsec_source=pc_search" target="_blank">手机上跑LLM——能跑和能用是两回事</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  分析端侧LLM现状，从硬件算力、模型量级到实际速度，说明“能跑”与“好用”的差距。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1c2547000000003600174e?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VSwLmhw7s4LOjru37zWyujs=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-05-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.30753v1" target="_blank">Efficient Diffusion LLMs via Temporal-Spatial Parallel Decoding and Confidence Extrapolation</a>
+                </div>
+                <div class="card-byline">Zekai Li, Ji Liu, Yiqing Huang, Ziqiong Liu, Dong Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出时空并行解码与置信外推法，加速扩散LLM推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30753v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30753v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对扩散LLM推理步骤多、冗余细化问题，提出时序-空间并行解码与置信外推技术。核心创新是预测token最终值并提前确定不变令牌，跳过冗余去噪步骤。实验表明，该方法在保持生成质量下显著减少推理步数，加速比达2-3倍。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">edge inference</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 7</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1cf6860000000038020d25?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8Vaij96-kcszdButAhnM43OA=&amp;xsec_source=pc_search" target="_blank">面向边缘设备的Token级路由推理系统</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  提出面向边缘设备的协同解码系统，用小模型本地推理加云端大模型关键token咨询。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1cf6860000000038020d25?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8Vaij96-kcszdButAhnM43OA=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.30857v1" target="_blank">MADS: Model-Aware Diverse Core Set Selection for Instruction Tuning</a>
+                </div>
+                <div class="card-byline">Yi Bai, Wenhao Zhang, Yao Chen, Jiao Xue, Zhumin Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出MADS模型感知的多样核心集选择方法，优化指令微调数据。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30857v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30857v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对指令微调数据规模大且多样性不足问题，提出模型感知的多样核心集选择方法MADS。核心创新是结合嵌入表示与模型行为选择高信息量样本，保证数据多样性。实验表明，MADS在保持模型指令跟随能力的同时，显著减少训练数据量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">QAT</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 3</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1c66aa000000003502c9ad?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VUbtZo-MHvAClBZBjKsyFws=&amp;xsec_source=pc_search" target="_blank">本科毕设</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  本科毕设使用QAT进行INT4/INT8量化，并在树莓派上部署，实现模型加速。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1c66aa000000003502c9ad?xsec_token=ABVvTxD-ID9BqOVJ-HtHL8VUbtZo-MHvAClBZBjKsyFws=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">inference acceleration</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.31158v1" target="_blank">Light Interaction: Training-Free Inference Acceleration for Interactive Video World Models</a>
+                </div>
+                <div class="card-byline">Jiacheng Lu, Haoyi Zhu, Sipei Yi, Enze Xie, Yu Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出免训练交互视频世界模型推理加速方法Light Interaction。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.31158v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.31158v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对交互式视频世界模型推理成本高问题，提出免训练加速方法Light Interaction。核心创新是动态裁剪上下文内存与优化注意力计算，减少重复去噪步骤。实验表明，该方法在保持视频生成质量的同时大幅降低推理延迟，适用于实时场景。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 1</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1d353c000000003501d564?xsec_token=ABkqVCChb9_OFX6QrMF4SW63mIwhiC81qPLM9ZjnG2auc=&amp;xsec_source=pc_search" target="_blank">MHA/MQA/GQA到底有啥区别？</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  对比MHA/MQA/GQA注意力机制，说明GQA在KV Cache效率与精度间取得平衡。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1d353c000000003501d564?xsec_token=ABkqVCChb9_OFX6QrMF4SW63mIwhiC81qPLM9ZjnG2auc=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">token pruning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.31457v1" target="_blank">VisionPulse: Dynamic Visual Sparsity for Efficient Multimodal Reasoning</a>
+                </div>
+                <div class="card-byline">Hengbo Xu, Shengjie Jin, Yanbiao Ma, Zhiwu Lu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出VisionPulse动态视觉稀疏方法，高效优化多模态推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.31457v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.31457v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对多模态大模型推理开销大问题，提出动态视觉令牌剪枝方法VisionPulse。核心创新是根据推理步骤动态保留关键视觉令牌，而非一次性剪枝。实验表明，该方法在保持推理精度的同时显著减少计算量，加速多模态推理流程。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 7</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1d0631000000003701f3b9?xsec_token=ABkqVCChb9_OFX6QrMF4SW62CJT_tLdfRtwgL0y4apGns=&amp;xsec_source=pc_search" target="_blank">大模型推理优化三板斧：量化、剪枝、蒸馏</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  科普大模型推理优化三大技术：量化、剪枝、知识蒸馏，强调要根据瓶颈选择方案。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1d0631000000003701f3b9?xsec_token=ABkqVCChb9_OFX6QrMF4SW62CJT_tLdfRtwgL0y4apGns=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

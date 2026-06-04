@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月04日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月04日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>9</b> 篇</div>
+      
+      
+      <div class="pill">📕 小红书 <b>10</b> 条</div>
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04238v1" target="_blank">Recover-LoRA for Aggressive Quantization: Reclaiming Accuracy in 2-Bit Language Models via Low-Rank Adaptation with Knowledge Distillation on Synthetic Data</a>
+                </div>
+                <div class="card-byline">Devleena Das, Rajeev Patwari, Elliott Delaye, Ashish Sirasao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Recover-LoRA，通过低秩适配和知识蒸馏恢复2比特LLM精度。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04238v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04238v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对2比特激进量化导致的LLM精度严重下降问题，提出Recover-LoRA。该方法是一种轻量级、无需数据的精度恢复方案，核心创新在于结合低秩适应和基于合成数据的知识蒸馏。实验证明，Recover-LoRA能有效挽回量化带来的精度损失，使得在边缘设备上部署极限压缩的LLM成为可能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM quantization</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 8</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a20f1600000000035033430?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD-8MUOB6PYK-HX540AjzBYE=&amp;xsec_source=pc_search" target="_blank">向量化的前置步骤：文档该怎么切？</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  介绍RAG中文档切分的四种方式，与量化主题无关。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a20f1600000000035033430?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD-8MUOB6PYK-HX540AjzBYE=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">post-training quantization</span>
+                    
+                    <span class="tag">PTQ</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04349v1" target="_blank">MorphoQuant: Modality-Aware Quantization for Omni-modal Large Language Models</a>
+                </div>
+                <div class="card-byline">Yue Wu, Changyuan Wang, Zixuan Wang, Shilin Ma, Yansong Tang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出MorphoQuant，一种面向全模态大语言模型的模态感知量化方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04349v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04349v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对全模态大语言模型（OLLM）在4比特量化时面临的模态间分布异质性难题，提出MorphoQuant。核心创新在于设计分布感知剪枝和跨模态重新参数化模块，以保留跨模态形态并减轻异常值损失。实验结果表明，MorphoQuant显著优于传统PTQ方法，实现了OLLM在低比特下的高效推理。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">inference acceleration</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 42</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1fc821000000003701f237?xsec_token=AByARGxNebQOCEtOhAvlwUhwtZK9CF9gmkH_bsq2KmXvU=&amp;xsec_source=pc_search" target="_blank">[ICML&#39;26] 给Agent Memory装上&#34;预算路由&#34;</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  介绍Agent Memory的预算路由工作，与量化主题无关。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1fc821000000003701f237?xsec_token=AByARGxNebQOCEtOhAvlwUhwtZK9CF9gmkH_bsq2KmXvU=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">post-training quantization</span>
+                    
+                    <span class="tag">PTQ</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04620v1" target="_blank">QuBLAST: A Framework for Quantizing Large Language Models with Block-Level Compression Approach and Activation Scaling Strategy</a>
+                </div>
+                <div class="card-byline">Pasindu Wickramasinghe, Achyuta Muthuvelan, Rachmad Vidya Wicaksana Putra, Minghao Shao, Muhammad Shafique</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出QuBLAST框架，以块级压缩和激活缩放策略实现LLM高效量化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04620v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04620v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出QuBLAST，一个针对LLM的量化框架，采用块级压缩和激活缩放策略。核心创新在于突破传统均匀PTQ的限制，对网络不同注意力块应用非均匀量化，并结合激活值缩放来抑制异常值影响。实验显示，QuBLAST在低比特量化下显著降低了模型内存和计算成本，同时保持了较高的任务精度。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM quantization</span>
+                    
+                  </div>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a20d86a000000003701ed8a?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD2kj_trUh8o4vYn7oNrKURA=&amp;xsec_source=pc_search" target="_blank">阿里的多模态qwen3.7plus</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  评论阿里多模态大模型团队及人事变动，无关量化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a20d86a000000003701ed8a?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD2kj_trUh8o4vYn7oNrKURA=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM quantization</span>
+                    
+                    <span class="tag">post-training quantization</span>
+                    
+                    <span class="tag">PTQ</span>
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04945v1" target="_blank">STaR-Quant: State-Time Consistent Post-Training Quantization for Diffusion Large Language Models</a>
+                </div>
+                <div class="card-byline">Xin Yan, Aqiang Wang, Zhenglin Wan, Xingrui Yuand Ivor Tsang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出STaR-Quant，针对扩散LLM的即插即用后训练量化方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04945v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04945v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对扩散大语言模型（DLLM）迭代去噪过程中的高计算和内存开销，提出STaR-Quant后训练量化框架。核心创新在于利用DLLM的“状态-时间”一致性来校准量化参数，解决了传统PTQ在非自回归模型上失效的问题。实验证明，该方法在显著压缩模型的同时，保持了生成质量，推动了DLLM的实用化部署。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM quantization</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 10</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a20ca7f00000000220248cc?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD4b77wiszwADveAOqXhHodg=&amp;xsec_source=pc_search" target="_blank">游戏xLLM|社交推理/阿瓦隆游戏论文(1)</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  论文介绍多智能体社交推理评估平台，与量化主题无关。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a20ca7f00000000220248cc?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD4b77wiszwADveAOqXhHodg=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04980v1" target="_blank">AlphaQ: Calibration-Free Bit Allocation for Mixture-of-Experts Quantization</a>
+                </div>
+                <div class="card-byline">Wanqi Yang, Yuexiao Ma, Alexander Conzelmann, Xiawu Zheng, Michael W. Mahoney</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出AlphaQ，实现无需校准数据的混合精度MoE量化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04980v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04980v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对MoE架构的混合精度量化问题，提出AlphaQ，一种无需校准数据的比特分配方法。核心创新在于通过分析专家网络的统计特性来动态分配比特宽度，避免了传统方法对校准数据的依赖。实验表明，AlphaQ在显著减少内存占用的同时，保持了模型精度，为MoE模型的高效部署提供了新方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantization-aware training</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 19</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a20303f000000003701dd69?xsec_token=ABHdaBzoWvLb7_BCVJUjcaDyzZxe0YrSKu4VOCBNkvEVE=&amp;xsec_source=pc_search" target="_blank">北航、上交等｜中期训练数据身定做评分标准</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  论文提出中期训练数据评分标准MIRA，与量化主题无关。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a20303f000000003701dd69?xsec_token=ABHdaBzoWvLb7_BCVJUjcaDyzZxe0YrSKu4VOCBNkvEVE=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04446v1" target="_blank">D^2SD: Accelerating Speculative Decoding with Dual Diffusion Draft Models</a>
+                </div>
+                <div class="card-byline">Liyuan Zhang, Jiarui Zhang, Jinwei Yao, Ran Yan, Yuchen Yang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出D²SD，利用双扩散草稿模型加速推测解码。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04446v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04446v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对推测解码中单序列草稿验证效率低下的问题，提出D²SD。核心创新在于使用双扩散模型并行生成多个不同的草稿序列，通过一次性验证多个假设来提高目标模型的验收率。实验结果显示，D²SD在多个文本生成任务上大幅提升了加速比，减少了推理延迟，推动了推测解码技术的发展。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">post-training quantization</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 60</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1ec9b0000000002101461f?xsec_token=AB2PNuf0DCq8ngL4Wo-h-Em5-T1l9iBvMSNkxXXR6Gheg=&amp;xsec_source=pc_search" target="_blank">资深后端转型AI：企微Agent高薪局揭秘</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  讨论企微Agent开发的技术挑战，与量化主题无关。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1ec9b0000000002101461f?xsec_token=AB2PNuf0DCq8ngL4Wo-h-Em5-T1l9iBvMSNkxXXR6Gheg=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04511v1" target="_blank">SparDA: Sparse Decoupled Attention for Efficient Long-Context LLM Inference</a>
+                </div>
+                <div class="card-byline">Yaosheng Fu, Guangxuan Xiao, Xin Dong, Song Han, Oreste Villa</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出SparDA，一种稀疏解耦注意力机制用于高效长上下文LLM推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04511v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04511v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长上下文LLM推理中稀疏注意力的两个关键瓶颈（KV缓存增长和稀疏选择的高复杂度），提出SparDA。核心创新在于解耦注意力计算，实现了KV缓存的有效管理并降低了注意力选择的计算量。实验证明，SparDA在长序列场景下大幅提升了推理速度和内存效率，是一种有效的加速方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">inference acceleration</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 158</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1fe87c0000000022015226?xsec_token=AByARGxNebQOCEtOhAvlwUhwSDaNZtAOLHYQBucnLYdDA=&amp;xsec_source=pc_search" target="_blank">前沿异步RL解决了吗？</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  讨论大模型RL训练的崩溃问题，与量化主题无关。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1fe87c0000000022015226?xsec_token=AByARGxNebQOCEtOhAvlwUhwSDaNZtAOLHYQBucnLYdDA=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04920v1" target="_blank">Toward Multi-Domain and Long-Tailed Quantization via Feature Alignment and Scaling</a>
+                </div>
+                <div class="card-byline">Chin-Yuan Yeh, Ting-An Chen, De-Nian Yang, Ming-Syan Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出EmaQ，通过特征对齐和缩放解决多域长尾数据的量化问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04920v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04920v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对传统量化方法在多领域和长尾数据分布下失效的问题，提出EmaQ。核心创新在于通过跨域特征分布对齐和缩放策略，使量化网络能适应数据分布偏移和类别不平衡。实验表明，EmaQ在多个具有挑战性的场景下显著优于现有方法，提升了量化模型在复杂数据环境中的鲁棒性和泛化能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantization-aware training</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 7</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a202ba20000000022016b0e?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD5g_ffGzXkNtI8zytK6V0XQ=&amp;xsec_source=pc_search" target="_blank">6.3华为AI岗做完，真的太容易了吧</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  分享华为AI岗机考经验，涉及线性回归和反向传播，无关量化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a202ba20000000022016b0e?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD5g_ffGzXkNtI8zytK6V0XQ=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.04373v1" target="_blank">Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers</a>
+                </div>
+                <div class="card-byline">Biao Qian, Yang Wang, Yong Wu, Jungong Han</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出掩码注意力对齐方法，实现视觉Transformer的无数据量化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.04373v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.04373v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对视觉Transformer（ViT）无数据量化（DFQ）中合成数据与真实数据分布不匹配的问题，提出基于选择性耦合解耦信息区域的掩码注意力对齐方法。核心创新在于引导量化模型关注关键区域，缓解分布偏移。实验表明，该方法在无真实数据访问的情况下，实现了ViT的高质量量化，保护了数据安全。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM quantization</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 21</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a2064fa000000003601b2db?xsec_token=ABHdaBzoWvLb7_BCVJUjcaDxiu0SIFM1qAWpqq8DlVBz0=&amp;xsec_source=pc_search" target="_blank">🔥 MAI第一枪：不蒸馏！超棒LLM学习资料</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  介绍微软MAI从零训练LLM的技术报告，无关量化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a2064fa000000003601b2db?xsec_token=ABHdaBzoWvLb7_BCVJUjcaDxiu0SIFM1qAWpqq8DlVBz0=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">inference acceleration</span>
+                    
+                  </div>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a20f5f70000000013020400?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD9e4BgNRw4oxrCTCbm7_dTs=&amp;xsec_source=pc_search" target="_blank">Claude Code 更新了！</a>
+                </div>
+                
+                <div class="summary-xhs">
+                  <span class="label">💡 内容总结</span>
+                  介绍Claude Code的版本更新功能，与量化主题无关。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a20f5f70000000013020400?xsec_token=ABHdaBzoWvLb7_BCVJUjcaD9e4BgNRw4oxrCTCbm7_dTs=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

@@ -93,4 +93,4 @@ custom_llm:
 xhs_keywords: []
 
 # 小红书初始搜索候选数量（每个关键词均分）
-xhs_candidate_pool: 80
+xhs_candidate_pool: 100

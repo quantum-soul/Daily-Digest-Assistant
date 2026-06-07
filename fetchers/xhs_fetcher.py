@@ -43,7 +43,7 @@ def fetch_xhs_notes(
             require_num=per_kw,
             cookies_str=cookies_str,
             sort_type_choice=0,  # 综合排序
-            note_time=1,         # 仅一天内发布的笔记
+            note_time=0,         # 不限时间发布
             proxies=proxies,
         )
         if not success:

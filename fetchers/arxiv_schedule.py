@@ -114,3 +114,39 @@ def get_previous_announcement_date(ann_date: date, holidays: set[date] = HOLIDAY
         d -= timedelta(days=1)
 
     raise RuntimeError("无法在 14 天内找到前一个有效公告日，请检查节假日配置")
+
+
+def get_weekly_announcement_dates(now_et: datetime | None = None,
+                                   target: int = 6,
+                                   holidays: set[date] = HOLIDAYS) -> list[date]:
+    """
+    返回最近 target 个有效 arXiv 公告日列表（按时间升序）。
+
+    从当前有效公告日开始向前回退，收集指定数量的有效公告日。
+    默认 target=6 覆盖一个 arXiv 周（5 天公告 + 1 天节假日缓冲）。
+
+    Args:
+        now_et: ET 时间戳（None 则用当前时间）
+        target: 收集的公告日数量
+        holidays: 节假日集合
+
+    Returns:
+        按时间升序排列的公告日列表（最老的在前，最新的在后）
+    """
+    if now_et is None:
+        now_et = datetime.now(ET)
+
+    latest = get_effective_announcement_date(now_et, holidays)
+    dates = [latest]
+    while len(dates) < target:
+        prev = dates[0] - timedelta(days=1)
+        for _ in range(14):
+            if _is_valid_announcement_day(prev, holidays):
+                dates.insert(0, prev)
+                break
+            prev -= timedelta(days=1)
+        else:
+            # 14 天内没找到更多公告日，提前退出
+            break
+
+    return dates

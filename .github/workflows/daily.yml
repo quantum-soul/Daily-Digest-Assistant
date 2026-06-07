@@ -1,8 +1,8 @@
-name: Daily Paper Digest
+name: Paper Digest
 
 on:
   schedule:
-    - cron: "0 4 * * *"    # UTC 04:00 = 北京时间 12:00，每天（小红书不休息）
+    - cron: "0 4 * * 1"    # UTC 04:00 = 北京时间 12:00，每周一
   workflow_dispatch:        # 支持手动触发（测试用）
 
 jobs:
@@ -113,7 +113,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/daily/
-          git diff --quiet && git diff --staged --quiet || git commit -m "auto: archive daily digest $(date +%Y-%m-%d)"
+          git diff --quiet && git diff --staged --quiet || git commit -m "auto: archive digest $(date +%Y-%m-%d)"
           git checkout -- . && git clean -fd
           git pull --rebase origin main
           git push
@@ -186,5 +186,5 @@ jobs:
           # 进入目标仓库并推送
           cd target-repo
           git add study/
-          git diff --quiet && git diff --staged --quiet || git commit -m "auto: sync daily digest $(date +%Y-%m-%d)"
+          git diff --quiet && git diff --staged --quiet || git commit -m "auto: sync digest $(date +%Y-%m-%d)"
           git push origin master

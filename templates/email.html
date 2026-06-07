@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日推送 · {{ date }}</title>
+<title>{% if mode == "weekly" %}每周推送 · {{ week_start }} ~ {{ week_end }}{% else %}每日推送 · {{ date }}{% endif %}</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
@@ -73,9 +73,9 @@ details summary:hover { background: #eef2ff; }
 
   <!-- Header -->
   <div class="header">
-    <div class="eyebrow">📬 Daily Digest</div>
-    <h1>今日推送</h1>
-    <div class="meta">{{ date }} · {{ weekday }}</div>
+    <div class="eyebrow">{% if mode == "weekly" %}📬 Weekly Digest{% else %}📬 Daily Digest{% endif %}</div>
+    <h1>{% if mode == "weekly" %}本周推送{% else %}今日推送{% endif %}</h1>
+    <div class="meta">{% if mode == "weekly" %}{{ week_start }} ~ {{ week_end }} · 本周合集{% else %}{{ date }} · {{ weekday }}{% endif %}</div>
     <div class="pills">
       {% if not arxiv_rest %}
       <div class="pill">📄 arXiv <b>{{ papers | length }}</b> 篇</div>
@@ -196,14 +196,14 @@ details summary:hover { background: #eef2ff; }
       {% endfor %}
     {% else %}
       <tr>
-        <td colspan="2" style="text-align:center;color:#bbb;font-size:13px;padding:40px 0;">今日暂无内容</td>
+        <td colspan="2" style="text-align:center;color:#bbb;font-size:13px;padding:40px 0;">{% if mode == "weekly" %}本周暂无内容{% else %}今日暂无内容{% endif %}</td>
       </tr>
     {% endif %}
   </table>
 
   <!-- Footer -->
   <div class="footer">
-    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    由 <strong>arxiv-daily</strong> 自动生成 · {% if mode == "weekly" %}每周一 12:00 推送{% else %}每天 12:00 推送{% endif %}<br>
     {% if archive_url %}
     <a href="{{ archive_url }}" target="_blank">📚 查看历史归档</a> ·
     {% endif %}

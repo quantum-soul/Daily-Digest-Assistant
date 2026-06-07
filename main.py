@@ -21,7 +21,7 @@ import argparse
 import os
 import sys
 import yaml
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 import pytz
 
@@ -31,6 +31,7 @@ from fetchers.arxiv_schedule import (
     _is_valid_announcement_day,
     get_effective_announcement_date,
     get_submission_window,
+    get_weekly_announcement_dates,
     normalize_requested_announcement_date,
 )
 from fetchers.xhs_fetcher import fetch_xhs_notes
@@ -54,7 +55,7 @@ def get_env(key: str, required: bool = True) -> str:
     return val
 
 
-def main(dry_run: bool = False, target_date: date | None = None, entropy_only: bool = False):
+def main(dry_run: bool = False, target_date: date | None = None, entropy_only: bool = False, mode: str | None = None):
     cfg = load_config()
 
     keywords       = cfg.get("keywords", [])
@@ -67,6 +68,18 @@ def main(dry_run: bool = False, target_date: date | None = None, entropy_only: b
     custom_llm     = cfg.get("custom_llm") or {}
     xhs_keywords   = cfg.get("xhs_keywords") or keywords
     xhs_pool       = cfg.get("xhs_candidate_pool", 30)
+    digest_mode    = mode or cfg.get("mode", "daily")
+
+    # weekly 模式：非周一直接跳过，不检查 API key
+    if digest_mode == "weekly":
+        BJ = pytz.timezone("Asia/Shanghai")
+        today_bj = datetime.now(BJ).date()
+        if today_bj.weekday() != 0:
+            print(f"[SKIP] Weekly 模式：今天不是周一（北京 {today_bj}），跳过。")
+            html = "<html><body><p>Weekly mode: not Monday, no digest.</p></body></html>"
+            with open("preview.html", "w", encoding="utf-8") as f:
+                f.write(html)
+            return
 
     llm_api_key = get_env("LLM_API_KEY")
     email_user  = get_env("EMAIL_USER", required=not dry_run)
@@ -75,9 +88,11 @@ def main(dry_run: bool = False, target_date: date | None = None, entropy_only: b
     xhs_cookie  = get_env("XHS_COOKIE", required=False)
 
     # Step 1: 判断今天是否有 arXiv 公告，并抓取候选
+    BJ = pytz.timezone("Asia/Shanghai")
     arxiv_rest = False
     papers = []
     candidates = []
+    week_range = None  # weekly 模式下的日期范围 (start_date, end_date)
 
     if target_date:
         if _is_valid_announcement_day(target_date):
@@ -85,29 +100,55 @@ def main(dry_run: bool = False, target_date: date | None = None, entropy_only: b
         else:
             arxiv_rest = True
             ann_date = None
+    elif digest_mode == "weekly":
+        # ── Weekly 模式 ──
+        now_et = datetime.now(ET)
+        ann_dates = get_weekly_announcement_dates(now_et)
+        WEEKDAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        print(f"[1/5] Weekly 模式：覆盖 {len(ann_dates)} 个 arXiv 公告日，关键词: {keywords}")
+
+        all_candidates = []
+        per_day_pool = max(10, candidate_pool // len(ann_dates) + 1)
+        for ann_date in ann_dates:
+            start_time, end_time = get_submission_window(ann_date)
+            print(f"      公告日(ET): {ann_date.strftime('%m-%d')} {WEEKDAY_NAMES[ann_date.weekday()]} "
+                  f"窗口: {start_time.astimezone(ET).strftime('%m-%d %H:%M')} ~ "
+                  f"{end_time.astimezone(ET).strftime('%m-%d %H:%M')}")
+            day_candidates = fetch_papers(keywords, categories, per_day_pool,
+                                          start_time=start_time, end_time=end_time)
+            all_candidates.extend(day_candidates)
+
+        # 按 paper ID 去重
+        seen = set()
+        for p in all_candidates:
+            if p["id"] not in seen:
+                seen.add(p["id"])
+                candidates.append(p)
+        print(f"      候选论文: {len(candidates)} 篇（去重后，共 {len(all_candidates)} 篇原始）")
+
+        week_range = (today_bj - timedelta(days=today_bj.weekday() + 7),
+                       today_bj - timedelta(days=today_bj.weekday() + 1))
     else:
+        # ── Daily 模式（默认）──
         now_et = datetime.now(ET)
         today_et = now_et.date()
-        # 总是获取有效的公告日（自动回退到前一个有效日）
         ann_date = get_effective_announcement_date(now_et)
-        # 今天不是公告日（周五=4，周六=5）且已经过了 20:00 ET → 标记休息
-        # 注意：周五 00:05 ET = 北京时间 12:05，此时周四公告才过了 4 小时，应该继续抓
-        # 所以只在"公告已过期"时标记休息：即周六、周日
         if today_et.weekday() in {5, 6}:  # Sat, Sun
             arxiv_rest = True
 
-    if not arxiv_rest:
-        WEEKDAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-        print(f"[1/5] 搜索 arxiv 论文，关键词: {keywords}")
-        print(f"      公告日(ET): {ann_date.strftime('%m-%d')} {WEEKDAY_NAMES[ann_date.weekday()]}")
-        start_time, end_time = get_submission_window(ann_date)
-        print(f"      提交窗口(ET): {start_time.astimezone(ET).strftime('%m-%d %H:%M')} ~ "
-              f"{end_time.astimezone(ET).strftime('%m-%d %H:%M')}")
-        candidates = fetch_papers(keywords, categories, candidate_pool,
-                                  start_time=start_time, end_time=end_time)
-        print(f"      候选论文: {len(candidates)} 篇")
-    else:
-        print(f"[1/5] arXiv 今日无公告（休息日），跳过论文抓取")
+    if digest_mode != "weekly":
+        if not arxiv_rest:
+            WEEKDAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+            print(f"[1/5] 搜索 arxiv 论文，关键词: {keywords}")
+            print(f"      公告日(ET): {ann_date.strftime('%m-%d')} {WEEKDAY_NAMES[ann_date.weekday()]}")
+            start_time, end_time = get_submission_window(ann_date)
+            print(f"      提交窗口(ET): {start_time.astimezone(ET).strftime('%m-%d %H:%M')} ~ "
+                  f"{end_time.astimezone(ET).strftime('%m-%d %H:%M')}")
+            candidates = fetch_papers(keywords, categories, candidate_pool,
+                                      start_time=start_time, end_time=end_time)
+            print(f"      候选论文: {len(candidates)} 篇")
+        else:
+            print(f"[1/5] arXiv 今日无公告（休息日），跳过论文抓取")
 
     # Step 2: 筛选
     if candidates:
@@ -167,7 +208,8 @@ def main(dry_run: bool = False, target_date: date | None = None, entropy_only: b
         owner, repo = gh_repo.split("/", 1)
         archive_url = f"https://{owner}.github.io/{repo}/archive.html"
     html = render_email(papers, keywords, xhs_notes=xhs_notes, arxiv_rest=arxiv_rest,
-                        display_date=target_date, archive_url=archive_url)
+                        display_date=target_date, archive_url=archive_url,
+                        mode=digest_mode, week_range=week_range)
 
     with open("preview.html", "w", encoding="utf-8") as f:
         f.write(html)
@@ -188,6 +230,8 @@ if __name__ == "__main__":
     parser.add_argument("--entropy-only", action="store_true", help="熵筛选 + LLM 生成摘要，不用 LLM 做相关性评分")
     parser.add_argument("--date", type=str, default=None,
                         help="手动指定公告日（YYYY-MM-DD），用于补跑历史批次")
+    parser.add_argument("--mode", type=str, default=None, choices=["daily", "weekly"],
+                        help="覆盖 config.yml 的 mode 设置: daily | weekly")
     args = parser.parse_args()
 
     target = None
@@ -198,4 +242,4 @@ if __name__ == "__main__":
             print(f"[ERROR] --date 格式错误，应为 YYYY-MM-DD，收到: {args.date}", file=sys.stderr)
             sys.exit(1)
 
-    main(dry_run=args.dry_run, target_date=target, entropy_only=args.entropy_only)
+    main(dry_run=args.dry_run, target_date=target, entropy_only=args.entropy_only, mode=args.mode)

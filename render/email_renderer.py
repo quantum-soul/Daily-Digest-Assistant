@@ -20,6 +20,8 @@ def render_email(
     display_date: date | None = None,
     template_dir: str = None,
     archive_url: str = None,
+    mode: str = "daily",
+    week_range: tuple | None = None,
 ) -> str:
     """
     渲染 HTML 邮件正文。
@@ -32,6 +34,8 @@ def render_email(
         display_date: 邮件显示日期，None 则用今天
         template_dir: 模板目录路径，默认为本文件同级的 ../templates
         archive_url: 归档站点 URL，如 https://用户名.github.io/Daily-Digest-Assistant/archive.html
+        mode: 推送模式 "daily" | "weekly"
+        week_range: weekly 模式下的 (start_date, end_date)
 
     Returns:
         渲染后的 HTML 字符串
@@ -46,6 +50,12 @@ def render_email(
     date_str = d.strftime("%Y年%m月%d日")
     weekday_str = WEEKDAY_MAP[d.weekday()]
 
+    week_start = ""
+    week_end = ""
+    if mode == "weekly" and week_range:
+        week_start = week_range[0].strftime("%Y年%m月%d日")
+        week_end = week_range[1].strftime("%Y年%m月%d日")
+
     html = template.render(
         date=date_str,
         weekday=weekday_str,
@@ -54,5 +64,8 @@ def render_email(
         xhs_notes=xhs_notes or [],
         arxiv_rest=arxiv_rest,
         archive_url=archive_url,
+        mode=mode,
+        week_start=week_start,
+        week_end=week_end,
     )
     return html

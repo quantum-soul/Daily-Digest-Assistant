@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周推送 · 2026年06月01日 ~ 2026年06月07日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Weekly Digest</div>
+    <h1>本周推送</h1>
+    <div class="meta">2026年06月01日 ~ 2026年06月07日 · 本周合集</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>8</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM quantization</span>
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.07116v1" target="_blank">OffQ: Taming Structured Outliers in LLM Quantization by Offsetting</a>
+                </div>
+                <div class="card-byline">Haoqi Wang, Lorenz K. Mueller, Jiawei Zhuang, Mathieu Salzmann, Lukas Cavigelli</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出OffQ方法，通过偏移策略抑制LLM低比特量化中的结构化异常值。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.07116v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.07116v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对低比特量化中激活值异常值导致性能下降的问题，提出OffQ方法。核心创新是通过偏移（offsetting）技术主动抑制结构化异常值，而非被动裁剪或缩放。实验表明，在INT4和INT8量化下，该方法显著提升了模型精度，尤其在复杂推理任务上，有效平衡了量化效率与模型性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.07098v1" target="_blank">SigmaScale: LLM Compression with SVD-based Low-Rank Decomposition and Learned Scaling Matrices</a>
+                </div>
+                <div class="card-byline">Ernests Lavrinovics, Marco Letizia, Roy Janco, Shai Segal, Johannes Bjerva</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出SigmaScale方法，利用学习缩放矩阵辅助SVD低秩分解实现LLM压缩。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.07098v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.07098v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦LLM模型压缩，提出SigmaScale方法，通过学习缩放矩阵优化截断SVD的低秩分解过程。核心创新在于激活感知的优化损失和可学习缩放变换，以提升压缩后模型质量。实验表明，该方法在保持高压缩比的同时，显著降低了性能损失，优于传统SVD压缩方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06256v1" target="_blank">RedKnot: Efficient Long-Context LLM Serving with Head-Aware KV Reuse and SegPagedAttention</a>
+                </div>
+                <div class="card-byline">Yang Liu, ZhaoKai Luo, HuaYi Jin, ZhiYong Wang, RuoZhou He</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出RedKnot系统，通过头部感知KV复用和分段注意力实现高效长上下文LLM服务。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06256v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06256v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦长上下文LLM服务中KV缓存瓶颈问题，提出RedKnot系统。核心创新包括头部感知KV复用、前缀KV缓存压缩、热/冷KV缓存分离及分布式管理。实验结果表明，该方法显著提高了缓存复用率和GPU内存利用率，在长上下文场景下实现了更高的并发性和更低的延迟。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06302v1" target="_blank">Tangram: Unlocking Non-Uniform KV Cache for Efficient Multi-turn LLM Serving</a>
+                </div>
+                <div class="card-byline">Hyungmin Kim, Minsoo Kim, Hongseok Kim, Jungwook Choi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Tangram框架，利用非均匀KV缓存实现高效多轮LLM服务。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06302v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06302v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对多轮LLM服务中KV缓存线性增长导致的显存和带宽压力，提出Tangram框架。核心创新在于采用非均匀KV压缩策略，根据每个缓存的重要性保留更多信息，并解决由此引发的系统挑战。实验表明，该方法在保持推理质量的同时，显著降低了显存占用并提升了服务吞吐量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">INT8</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06850v1" target="_blank">CFRNet: Cycle-Consistent Fixed-Point Training for Real-Time Blind Face Restoration on Consumer Embedded NPUs</a>
+                </div>
+                <div class="card-byline">Fuchen Li, Xinyang Wang, Yahui Zhang, Yuhan Chen, Jiahong Guo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出CFRNet循环一致定点训练方法，实现嵌入式NPU上的实时盲人脸恢复。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06850v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06850v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对消费级嵌入式NPU上盲人脸恢复的量化与编译难题，提出CFRNet方法。核心创新是循环一致定点训练，使模型在低比特（INT8）下高效运行。实验证明，该方法在保持良好图像质量的同时，显著提升了推理速度，满足了实时性要求，实现了在资源受限设备上的高效部署。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06309v1" target="_blank">RhymeFlow: Training-Free Acceleration for Video Generation with Asynchronous Denoising Flow Scheduling</a>
+                </div>
+                <div class="card-byline">Chensheng Dai, Shengjun Zhang, Yifan Li, Zhang Zhang, Zheng Zhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出RhymeFlow无训练加速方法，通过异步去噪调度实现视频生成加速。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06309v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06309v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对视频生成模型的高推理延迟，提出RhymeFlow方法，采用异步去噪流调度减少计算量。核心创新在于无需额外训练或量化，通过调度优化实现加速。虽然涉及推理加速，但主要应用于视频生成领域，与LLM量化和低比特推理无关。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06467v1" target="_blank">You Only Index Once: Cross-Layer Sparse Attention with Shared Routing</a>
+                </div>
+                <div class="card-byline">Yutao Sun, Yanqi Zhang, Li Dong, Jianyong Wang, Furu Wei</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出跨层稀疏注意力共享路由方法，旨在加速长上下文LLM解码。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06467v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06467v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长上下文LLM推理中稀疏注意力的效率-质量权衡问题，提出跨层稀疏注意力共享路由方法。核心创新在于统一索引和路由策略以减少计算开销。虽然聚焦于推理加速，但未涉及量化、低比特等核心技术，而是通过注意力机制优化来提升解码效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">model compression</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06491v1" target="_blank">TempoVLA: Learning Speed-Controllable Vision-Language-Action Policies</a>
+                </div>
+                <div class="card-byline">Dong Jing, Jingchen Nie, Tianqi Zhang, Jiaqi Liu, Huaxiu Yao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  论文提出速度可控的视觉-语言-动作模型，非量化核心方向但涉及压缩加速。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06491v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06491v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出TempoVLA，使机器人策略能根据任务阶段动态调整执行速度。核心创新在于通过模型压缩和KV缓存重用等加速技术实现速度控制。虽然涉及模型压缩和推理加速，但并非以量化或低比特为核心主题，而是作为辅助手段提升机器人操控效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每周一 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

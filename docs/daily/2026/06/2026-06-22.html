@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周推送 · 2026年06月15日 ~ 2026年06月21日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Weekly Digest</div>
+    <h1>本周推送</h1>
+    <div class="meta">2026年06月15日 ~ 2026年06月21日 · 本周合集</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>9</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.18967v1" target="_blank">EfficientRollout: System-Aware Self-Speculative Decoding for RL Rollouts</a>
+                </div>
+                <div class="card-byline">Minseo Kim, Minjae Lee, Seunghyuk Oh, Kevin Galim, Donghoon Kim</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出系统感知的自推测解码方法，加速强化学习中的LLM rollout生成。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.18967v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.18967v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM强化学习后训练中rollout生成延迟瓶颈，提出EfficientRollout框架。核心创新在于将系统感知与自推测解码结合，利用小型草稿模型并行生成候选序列，并通过系统级优化减少长尾生成耗时。实验表明，该方法在多种LLM和任务上显著降低推理延迟，同时保持生成质量，有效加速了RL训练过程。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">INT4</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.20381v1" target="_blank">Rethinking Shrinkage Bias in LLM FP4 Pretraining: Geometric Origin, Systemic Impact, and UFP4 Recipe</a>
+                </div>
+                <div class="card-byline">Qian Zhao, Kunlong Chen, Changxin Tian, Zhonghui Jiang, Haitao Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示FP4预训练中的收缩偏差，并提出UFP4配方解决该问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.20381v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.20381v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文发现当前FP4预训练中E2M1数据格式存在系统性收缩偏差，导致模型精度下降。核心创新是从几何角度分析偏差根源，提出UFP4训练配方，包括非均匀量化补偿和训练策略调整。实验证明，UFP4在多种LLM上恢复了因收缩偏差损失的精度，为FP4低比特预训练的实用化铺平了道路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.20474v1" target="_blank">UltraQuant: 4-bit KV Caching for Context-Heavy Agents</a>
+                </div>
+                <div class="card-byline">Inesh Chakrabarti, David Limpus, Aditi Ghai Rana, Bowen Bao, Spandan Tiwari</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  为上下文密集的代理应用设计4-bit KV缓存压缩方法UltraQuant。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.20474v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.20474v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对上下文密集型LLM代理中长前缀复用和并发带来的KV缓存压力，研究4-bit压缩。核心创新是采用TurboQuant风格的旋转与码本量化策略，在vLLM FP8 KV缓存部署基准上实现高质量压缩。实验表明，UltraQuant在保持推理精度的同时显著减少显存占用，使长上下文代理的高效部署成为可能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.20543v1" target="_blank">SSD: Spatially Speculative Decoding Accelerates Autoregressive Image Generation</a>
+                </div>
+                <div class="card-byline">Shilong Xiang, Zirui Zhang, Lijun Yu, Chengzhi Mao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出空间推测解码框架，利用2D局部性加速自回归图像生成。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.20543v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.20543v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对自回归图像生成中1D序列化丢弃2D空间局部性导致的推理瓶颈，提出SSD框架。核心创新是让推测解码的预测目标对齐图像的自然几何结构，利用空间相关性并行生成多个token。在图像生成任务上，SSD实现了2-3倍的推理加速，且不牺牲生成质量，为视觉自回归模型的高效部署提供了新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">token pruning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.18681v1" target="_blank">Moving Beyond Diversity: Visual Token Pruning as Subspace Reconstruction for Efficient VLMs</a>
+                </div>
+                <div class="card-byline">Jaeyeon Lee, Shunjie Wen, Dong-Wan Choi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  将视觉token剪枝重新定义为子空间重构问题，提升VLM推理效率。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.18681v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.18681v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文分析了现有基于多样性最大化的VLM token剪枝方法因忽略幅度信息导致的表示失真问题。核心创新是将token剪枝建模为子空间重构，保留原始特征空间的几何结构。实验证明，该方法在多个VLM基准上以更少的token数达到或超越原有性能，显著降低了计算开销并加速了推理。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.19755v1" target="_blank">SafeSpec: Fast and Safe LLM via Dynamic Reflective Sampling</a>
+                </div>
+                <div class="card-byline">Haotian Xu, Zeyang Zhang, Linbao Li, Huadi Zheng, Yu Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出SafeSpec，在不牺牲推理加速的前提下为推测解码提供安全保证。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.19755v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.19755v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决了推测解码加速LLM推理时缺乏安全保障的问题。核心创新是动态反射采样机制，在草稿-验证流程中嵌入轻量级安全检测，不额外增加计算开销。实验证明，SafeSpec有效阻止了不安全输出，同时保持了推测解码的加速比，实现了速度与安全性的兼顾。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.20537v1" target="_blank">Execution-State Capsules: Graph-Bound Execution-State Checkpoint and Restore for Low-Latency, Small-Batch, On-Device Physical-AI Serving</a>
+                </div>
+                <div class="card-byline">Liang Su</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  针对设备端AI的低延迟场景，提出基于执行状态胶囊的KV缓存优化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.20537v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.20537v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究低延迟、小批量、设备端物理AI服务的LLM推理优化。核心创新是引入执行状态胶囊，将KV缓存扩展为更全面的执行状态检查点与恢复机制，支持细粒度前缀复用。在交互式代理、语音系统等场景下，该方法大幅降低了首token延迟，优于传统分页或基数KV缓存方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    <span class="tag">token pruning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.19849v1" target="_blank">ViCoStream: Streaming VideoLLMs Can Run Beyond 100 FPS with Stage-Wise Coordinated Inference</a>
+                </div>
+                <div class="card-byline">Yang Tan, Junlong Tong, Linan Yue, Hao Wu, Pengfei Fang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出ViCoStream框架，通过阶段协同推理实现超过100FPS的流式视频LLM。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.19849v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.19849v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对流式视频LLM的实时部署需求，提出ViCoStream框架。核心创新在于对视觉编码、token剪枝和KV缓存压缩等模块进行阶段级协同优化，而非孤立加速。实验表明，ViCoStream将视频吞吐量提升至100 FPS以上，同时保持低查询延迟，显著改善了流式视频理解的实时性与资源效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">model compression</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.20005v1" target="_blank">StreamKL: Fast and Memory-Efficient KL Divergence for Boosting Attention Distillation</a>
+                </div>
+                <div class="card-byline">Guangda Liu, Yiquan Wang, Chengwei Li, Wenhao Chen, Jing Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出StreamKL，加速注意力蒸馏中KL散度的计算并降低显存。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.20005v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.20005v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对注意力蒸馏中KL散度计算显存和IO开销大的问题，提出StreamKL方法。核心创新在于避免物化完整注意力分布，通过流式计算减少O(N_QN_K)的显存占用。实验表明，该方法在知识蒸馏、模型压缩等任务中显著加速训练并降低资源消耗，但主题更侧重蒸馏而非直接量化。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每周一 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

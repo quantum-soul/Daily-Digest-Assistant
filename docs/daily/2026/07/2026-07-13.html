@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周推送 · 2026年07月06日 ~ 2026年07月12日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Weekly Digest</div>
+    <h1>本周推送</h1>
+    <div class="meta">2026年07月06日 ~ 2026年07月12日 · 本周合集</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">INT4</span>
+                    
+                    <span class="tag">INT8</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.08029v1" target="_blank">Rethinking Small VLM Quantization: From Component-Wise Analysis to Hardware-Aware Edge Deployment</a>
+                </div>
+                <div class="card-byline">Hyeju Shin, Chorwon Kim, Ryangsoo Kim, Hark Yoo, Jaein Kim</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  重新思考小VLM量化：从组件分析到硬件感知的边缘部署。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.08029v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.08029v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>系统评估小于3B参数的视觉语言模型在边缘设备上的组件级量化方案，验证五种假设。核心创新在于对视觉编码器、语言模型、投影层分别进行INT4/INT8量化分析。结论表明混合精度量化能在保持精度时实现高效on-device推理。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">post-training quantization</span>
+                    
+                    <span class="tag">PTQ</span>
+                    
+                    <span class="tag">INT8</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.08241v1" target="_blank">Closing the Null Space: Guidance-Aware Quantization for Classifier-Free Diffusion</a>
+                </div>
+                <div class="card-byline">Abdullah Al Shafi, Sumaiya Rahim Suma</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  引导感知量化方法，解决分类器自由扩散模型的PTQ结构盲区。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.08241v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.08241v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对CFG扩散模型双分支结构，提出引导感知PTQ方法，考虑条件/无条件输入的量化差异。核心创新在于量化过程中保留引导方向信息，减少分支间误差。实验表明在低比特量化下，生成质量明显优于单分支PTQ方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">model compression</span>
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.08643v1" target="_blank">BiSCo-LLM: Lookup-Free Binary Spherical Coding for Extreme Low-Bit Large Language Model Compression</a>
+                </div>
+                <div class="card-byline">Yuantian Shao, Peisong Wang, Zhilei Liu, Chuangyi Li, Yuanteng Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出无查找二进制球面编码，实现超低比特LLM压缩与高效推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.08643v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.08643v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对2比特以下权重压缩的容量限制，提出BiSCo-LLM方法，融合二进制球面编码与量化，无需查找表。核心创新在于利用球面编码在极低比特下保持表示能力，兼容低精度kernel。实验在多个LLM上达到2比特以下的高效压缩，且推理速度显著提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">post-training quantization</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.08734v1" target="_blank">The Illusion of Equivalency: Statistical Characterization of Quantization Effects in LLMs</a>
+                </div>
+                <div class="card-byline">Baha Rababah, Cuneyt Gurcan Akcora, Carson K. Leung</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  量化效应统计特性研究，揭示传统评估指标无法捕捉LLM量化行为改变。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.08734v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.08734v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出正确性一致性（correctness agreement）这一决策级度量，用于量化基模型与量化模型在正确预测上的重叠度，发现准确率和困惑度等指标无法反映量化引入的行为变化。核心创新在于统计刻画量化效应，实验表明即使困惑度相近，不同量化方法的行为差异显著。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">inference acceleration</span>
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.08993v1" target="_blank">StreamDQ: Near-Memory Weight DeQuantization in Custom HBM for Scalable AI Inference Acceleration</a>
+                </div>
+                <div class="card-byline">Minki Jeong, Daegun Yoon, Soohong Ahn, Seungyong Lee, Nameun Kang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  近内存权重重化加速器StreamDQ，利用定制HBM实现端侧推理加速。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.08993v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.08993v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对LLM权重量化后的反量化瓶颈，提出StreamDQ架构，在定制HBM中集成近内存反量化单元。核心创新在于消除CUDA反量化带来的指令开销和流水线停顿。实验显示相比GPU基线，吞吐量提升数倍，为on-device推理提供高效硬件方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">model compression</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.09063v1" target="_blank">EvoLP: Self-Evolving Latency Predictor for Model Compression in Real-Time Edge Systems</a>
+                </div>
+                <div class="card-byline">Shuo Huai, Hao Kong, Shiqing Li, Xiangzhong Luo, Ravi Subramaniam</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  自进化延迟预测器，针对实时边缘系统的模型压缩。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.09063v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.09063v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>提出EvoLP框架，通过自进化学习预测边缘设备上的推理延迟，指导模型压缩以满足实时性约束。核心创新在于无需真实硬件测量即可准确预测延迟，平衡压缩率与延迟。实验表明在边缘部署场景下，该方法有效降低了延迟并维持模型性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.08057v1" target="_blank">Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization</a>
+                </div>
+                <div class="card-byline">Jiantong Jiang, Peiyu Yang, Rui Zhang, Feng Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统感知的KV缓存优化综述，聚焦LLM推理服务的内存与延迟瓶颈。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.08057v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.08057v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文综述系统感知的KV缓存优化技术，覆盖缓存管理、内存压缩、量化等策略。核心创新在于从系统层面统一梳理KV缓存优化方法，包括PTQ和低比特存储。结论指出联合优化缓存压缩与量化可显著降低LLM推理延迟，适合on-device和edge场景。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.08642v2" target="_blank">DominoTree: Conditional Tree-Structured Drafting with Domino for Speculative Decoding</a>
+                </div>
+                <div class="card-byline">Saw S. Lin, Jyh-Shing Roger Jang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  DominoTree：条件树结构推测解码，提升LLM推理吞吐量。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.08642v2" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.08642v2" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>提出DominoTree方法，结合条件树结构与GRU因果修正生成推测块，优于块扩散和最佳优先树方法。核心创新在于捕获依赖关系，生成更准确的草稿token。实验显示在多个LLM上，解码速度显著提升，推理延迟降低。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.08690v1" target="_blank">A Practical Investigation of Training-free Relaxed Speculative Decoding</a>
+                </div>
+                <div class="card-byline">Guoxuan Xia, Luka Ribar, Paul Balanca</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  无训练松弛推测解码的实践研究，兼顾加速比与生成质量。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.08690v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.08690v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究标准推测解码的松弛变体，放弃损失保证以换取更高加速比。核心创新在于提出无需额外训练的松弛验证机制，控制生成分布偏移。实验显示在多种LLM上，松弛策略比无松弛版本提速20%以上，质量损失在可接受范围内。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.09052v1" target="_blank">COBS: Cumulant Order Block Sparse Attention</a>
+                </div>
+                <div class="card-byline">Alexander Tian, Aditya Ghai, Sanjit Neelam, Zaal Vasania, Akshay Mishra</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  累积量阶块稀疏注意力，缓解LLM中KV缓存读取瓶颈。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.09052v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.09052v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>提出COBS方法，利用累积量阶实现块稀疏注意力，减少KV缓存访问。核心创新在于通过高阶统计量选择注意力块，平衡稀疏性和精度。实验显示在保持模型质量的同时，推理吞吐量提升，适合edge和on-device部署。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每周一 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

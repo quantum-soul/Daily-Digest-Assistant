@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周推送 · 2026年07月13日 ~ 2026年07月19日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Weekly Digest</div>
+    <h1>本周推送</h1>
+    <div class="meta">2026年07月13日 ~ 2026年07月19日 · 本周合集</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.14618v1" target="_blank">PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference</a>
+                </div>
+                <div class="card-byline">Hyunwoo Oh, Suyeon Jang, Hanning Chen, KyungIn Nam, Sanggeon Yun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  面向边缘CPU的端到端量化框架PolyQ，实现低比特LLM推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.14618v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.14618v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出了PolyQ，一个编译器与量化协同设计的框架，专门用于在CPU上实现可扩展的LLM推理。核心创新在于实现了激活感知的按通道比特分配，在用户指定的平均比特预算下，为每个通道分配不同的比特数，从而在极低比特下保持模型精度。实验表明，PolyQ在边缘CPU上显著加速了LLM推理，同时保持了高精度，解决了现有低比特量化方法在CPU上执行效率低下的问题。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.14622v1" target="_blank">ExaGEMM: Exploration Framework for CPU-Driven ML Inference via Associative In-Register Computing for Low-Bit GEMM</a>
+                </div>
+                <div class="card-byline">Hyunwoo Oh, Suyeon Jang, Hanning Chen, Sanggeon Yun, Ryozo Masukawa</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ExaGEMM框架探索CPU驱动低比特GEMM的推理加速方案。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.14622v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.14622v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注低比特GEMM在CPU上的高效推理，特别是1/2/4比特权重的部署可行性。核心创新是ExaGEMM，一个探索框架，通过分析不同比特宽度下的复用机会和支持成本，指导轻量级CPU支持的选择。实验证明，利用关联寄存器计算，该框架在CPU上为低比特GEMM推理提供了显著的加速效果，是模型压缩和推理加速领域的重要探索。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.14622v1" target="_blank">ExaGEMM: Exploration Framework for CPU-Driven ML Inference via Associative In-Register Computing for Low-Bit GEMM</a>
+                </div>
+                <div class="card-byline">Hyunwoo Oh, Suyeon Jang, Hanning Chen, Sanggeon Yun, Ryozo Masukawa</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ExaGEMM框架探索CPU驱动低比特GEMM的推理加速方案。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.14622v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.14622v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注低比特GEMM在CPU上的高效推理，特别是1/2/4比特权重的部署可行性。核心创新是ExaGEMM，一个探索框架，通过分析不同比特宽度下的复用机会和支持成本，指导轻量级CPU支持的选择。实验证明，利用关联寄存器计算，该框架在CPU上为低比特GEMM推理提供了显著的加速效果，是模型压缩和推理加速领域的重要探索。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantization-aware training</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.15810v1" target="_blank">QUADS: Stabilizing NVFP4 Reinforcement Learning for MoE via QUantization-error Alignment across Dual Sides</a>
+                </div>
+                <div class="card-byline">Zhengyang Zhuge, Hao Yu, Xin Wang, Zheng Li, Yizhong Cao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  QUADS通过量化误差对齐，稳定MoE模型在NVFP4低精度下的强化学习。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.15810v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.15810v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对MoE大语言模型在强化学习推理阶段使用低精度NVFP4格式时出现的训练不稳定问题。核心创新是QUADS方法，它通过量化误差对齐，平衡了低精度计算带来的误差，从而稳定了训练过程。实验结果证明，QUADS使得在W4A4 FP4精度下进行MoE RL训练成为可能，在保持模型性能的同时实现了显著的推理加速。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.16184v1" target="_blank">PagedWeight: Efficient MoE LLM Serving with Dynamic Quality-Aware Weight Quantization</a>
+                </div>
+                <div class="card-byline">Yuchen Yang, Yifan Zhao, Anisha Dasgupta, Sasa Misailovic</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  PagedWeight通过动态权重量化，高效服务MoE LLM。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.16184v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.16184v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对MoE大语言模型在KV缓存密集型服务中，模型权重与KV缓存争抢GPU内存的问题。核心创新是PagedWeight，一种在运行时动态对MoE专家权重进行量化的管理方法，根据质量需求动态调整量化精度。主要结论是，PagedWeight在不显著影响模型质量的前提下，大幅降低了GPU内存占用，提升了服务吞吐量，实现了高效的LLM推理服务。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.14647v1" target="_blank">D-cut: Adaptive Verification Depth Pruning for Batched Speculative Decoding</a>
+                </div>
+                <div class="card-byline">Tianyu Liu, Yuhao Shen, Rui Cen, Junhan Shi, Jiebin Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  D-cut提出自适应验证深度剪枝方法，优化批量推测解码的效率。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.14647v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.14647v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决了批量推测解码中长草稿导致大量Token被拒绝而浪费计算的问题。核心创新是D-cut方法，它根据请求并发度自适应地剪枝验证深度，在保持高接受率的同时减少不必要的计算。实验结果表明，该方法在高并发场景下显著提升了LLM推理的吞吐量，降低了延迟，优化了推理加速效果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">model compression</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.14661v1" target="_blank">SmartRAG: Native Graph-Based RAG for Mobile Device</a>
+                </div>
+                <div class="card-byline">Zhihan Jiang, Meng Li, Shenghao Liu, Keran Li, Ruiben Zhou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SmartRAG提出基于图的RAG系统，专为移动设备上的大模型推理优化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.14661v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.14661v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了在移动设备上部署大语言模型作为个人助手所面临的隐私、低延迟和离线可用性挑战。核心创新在于提出SmartRAG，它不依赖单一模型压缩，而是通过将设备端智能分解为互补的功能角色，并结合原生图检索增强生成（RAG）架构来解决资源限制。主要结论是，SmartRAG在边缘设备上实现了高效的LLM推理，平衡了性能与资源消耗。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-07-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.15456v1" target="_blank">Looped Latent Attention: Cross-Loop KV Compression for Looped Transformers</a>
+                </div>
+                <div class="card-byline">James O&#39; Neill, Fergal Reid</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Looped Latent Attention提出跨循环KV压缩方法，优化循环Transformer推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.15456v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.15456v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了权重共享的循环Transformer在解码时，每个循环步骤都需要存储独立KV缓存导致的冗余问题。核心创新是Looped Latent Attention (LLA)，一个训练后方法，通过利用KV向量在循环间的低秩轨迹进行压缩。实验表明，LLA在不影响质量的情况下大幅减少了KV缓存占用，加速了循环Transformer的推理过程。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.15498v1" target="_blank">VarRate: Training-Free Variable-Rate KV Cache Compression for Long-Context LLMs</a>
+                </div>
+                <div class="card-byline">Shahrzad Esmat, Dhawal Shah, Ali Jannesari</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  VarRate提出免训练的可变速率KV缓存压缩方法，用于长上下文LLM推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.15498v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.15498v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长上下文LLM推理中KV缓存是主要内存瓶颈的问题。核心创新是VarRate，一种训练无关的可变速率压缩方法，它结合了Token选择和注意力汇聚的优势，避免了不可逆的Token驱逐。主要结论是，VarRate在保持长上下文任务准确性的同时，显著压缩了KV缓存大小，提升了LLM推理效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">token pruning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.15563v1" target="_blank">Are All Tokens Necessary for Visual Place Recognition? An Empirical Study of Token Reduction for Efficient Inference</a>
+                </div>
+                <div class="card-byline">Tong Jin, Yunpeng Liu, Shuyu Hu, Qinghua Zhang, Ruize Han</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  实证研究Token缩减方法，用于视觉位置识别中高效的Transformer推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.15563v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.15563v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文探讨了视觉Transformer中Token冗余问题，研究是否所有Token都对视觉位置识别任务至关重要。核心创新是对多种Token缩减方法进行了全面的经验性研究。主要结论是，通过去除不重要的Token，可以在不显著影响识别性能的情况下大幅降低计算开销，从而加速推理，为资源受限场景下的模型部署提供了指导。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每周一 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

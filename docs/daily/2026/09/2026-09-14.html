@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周推送 · 2026年09月07日 ~ 2026年09月13日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Weekly Digest</div>
+    <h1>本周推送</h1>
+    <div class="meta">2026年09月07日 ~ 2026年09月13日 · 本周合集</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.11582v1" target="_blank">OmniKVQuant: KV Cache Quantization for Omni-LLMs</a>
+                </div>
+                <div class="card-byline">Suho Yoo, Hyunjong Ok, Jongmin Choi, Jihoo Jung, Joon Son Chung</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  首次将KV cache量化扩展到Omni-LLM，分析多模态缓存特性并提出改进量化方案。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.11582v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.11582v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对Omni模态大模型（处理音频、视频、文本）KV cache内存开销大的问题，首次系统研究KV cache量化在多模态场景的适用性。作者分析代表性旋转式量化方法TurboQuant在多模态缓存上的行为，识别出两个关键失效模式。核心创新在于揭示多模态缓存与纯文本缓存的量化差异。结论为Omni-LLM的KV cache量化提供改进方向。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">post-training quantization</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.11716v1" target="_blank">Why Does Post-Training Quantization Work?</a>
+                </div>
+                <div class="card-byline">Yuxiang Chen, Michael Beyer, Jun Zhu, Jianfei Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  从隐藏状态误差累积角度解释后训练量化为何有效，揭示量化LLM误差不随深度累积的原因。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.11716v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.11716v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究后训练量化（PTQ）压缩LLM时，量化权重引入的隐藏状态误差为何未如预期随深度累积而破坏预测。作者对比随机初始化模型与量化预训练模型，发现后者误差累积显著更少。核心创新是从机制层面解释PTQ有效性，提出误差演化分析框架。结论表明预训练模型具有内在误差抑制特性，为量化鲁棒性提供理论依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.11392v1" target="_blank">PATTON: Enabling Commodity PIM for Production LLM Serving</a>
+                </div>
+                <div class="card-byline">Hangyeol Kim, Sanghyun Lee, Teokkyu Suh, Joo-Young Kim</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  面向生产级LLM服务，在商用PIM上实现KV cache生命周期管理以加速解码注意力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.11392v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.11392v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对内存受限的解码注意力，提出在商用存内计算（PIM）硬件上支持生产级LLM服务。核心挑战是PIM需高效支持KV cache块的动态分配、填充、共享、缓存与回收。PATTON设计物理内存分配、块地址映射与命令生成机制。结论表明仅加速注意力不足，需完整KV cache生命周期支持才能发挥PIM在真实服务中的价值。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">PTQ</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.11687v1" target="_blank">Structured Transforms for Low-Overhead Quantization of Language Models</a>
+                </div>
+                <div class="card-byline">Daria Cherniuk, Alexander Rudikov, Boris Kashin, Ivan Oseledets</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  改进基于Kashin分解的LLM权重量化，提出结构化正交变换降低量化开销。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.11687v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.11687v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文重新审视基于Kashin分解的LLM权重量化方法，针对原算法收敛性弱、变换开销大的问题提出改进。方法保留将权重分解为有界无穷范数分量与正交变换后有界分量两类因子的核心思想，但引入结构化高效正交变换。核心创新是更强收敛保证与低开销结构化变换。结论显示改进算法在保持量化精度的同时显著降低变换计算开销。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.12208v1" target="_blank">Vortex: Bridging Extreme Compression and Efficient LLM Inference</a>
+                </div>
+                <div class="card-byline">Haoxuan Shan, Cong Guo, Bowen Duan, Chiyue Wei, Feng Cheng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Vortex桥接极端压缩与高效LLM推理，解决VQ反量化开销与稀疏不规则访存难题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.12208v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.12208v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对向量量化（VQ）与输入依赖稀疏等极端压缩技术难以转化为实际效率的问题展开研究。在传统脉动阵列加速器上，VQ反量化开销高，输入依赖稀疏导致访存不规则。核心创新是提出Vortex架构桥接极端压缩与高效推理。结论表明该方案能有效降低压缩带来的反量化与不规则访存开销，实现实际加速。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-11</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.12550v1" target="_blank">Quality-Constrained Routing over a Fixed Pool of Quantized Mixture-of-Experts Instances</a>
+                </div>
+                <div class="card-byline">Zhenghong Huang, Hongfan Wu, Jiheng Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究固定量化MoE实例池内的质量约束路由，应对量化损伤随请求与位宽变化的问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.12550v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.12550v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究量化MoE服务中固定常驻实例池内的请求路由问题。由于量化损伤随请求和位宽剧烈变化，且实例物化与副本数消耗内存、重配置缓慢，作者将其视为上游供给决策。核心创新是在固定池内设计质量约束路由策略。结论表明合理路由可在满足质量约束下充分利用预物化量化实例，避免频繁重配置。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-11</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.13031v1" target="_blank">Attention Quantization for Tabular Foundation Models</a>
+                </div>
+                <div class="card-byline">Jonas M. Kübler, Benjamin Jäger, Klemens Flöge, Noah Hollmann, Frank Hutter</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  针对表格基础模型研究注意力量化，发现其优化重点与LLM不同应聚焦注意力计算。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.13031v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.13031v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对表格基础模型推理效率，研究其量化优化策略。作者发现虽然架构与LLM相似，但模型规模与服务模式差异显著，权重与KV cache量化并非重点。核心创新是指出应聚焦注意力计算的量化，而非沿用LLM量化范式。结论为表格基础模型提供差异化量化优化方向，填补该领域效率研究空白。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.11744v1" target="_blank">Building py-kvcache: A Performance Characterization of External KV Caching for vLLM with NVMe SSDs</a>
+                </div>
+                <div class="card-byline">Joseph Kanichai, Tiziano De Matteis, Animesh Trivedi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  表征vLLM外部KV缓存跨GPU/CPU/NVMe层级性能，揭示前缀缓存与重计算的权衡条件。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.11744v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.11744v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究vLLM中外部KV缓存对长上下文请求首token延迟（TTFT）的优化效果。前缀缓存可复用已计算KV状态，但对短前缀或快GPU，重计算可能快于外部加载。作者在GPU、CPU、NVMe多层级上用合成负载、长上下文基准与生产轨迹进行表征。核心发现是缓存效益取决于前缀长度与硬件层级，为外部KV缓存部署提供权衡依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">model compression</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-11</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.12310v1" target="_blank">ESTS at WMT26: Routing-Informed Expert Pruning for Model Compression</a>
+                </div>
+                <div class="card-byline">Liu O. Martin, Lucas Bandarkar, Nanyun Peng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出路由感知的专家剪枝模型压缩方法，用于WMT26英中与英阿翻译任务。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.12310v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.12310v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文描述ESTS团队在WMT26模型压缩共享任务的六个提交，覆盖英译简中与英译埃及阿拉伯语。所有系统基于GPT-OSS-20B，每方向三个压缩操作点。核心创新是使用任务特定路由质量排序专家，并用跨语言路由散度分配保留容量。结论表明路由感知剪枝能在压缩模型规模的同时维持翻译质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-11</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.12412v1" target="_blank">HoliBench: A Cross-Platform Benchmarking and Deployment Toolkit for Foundation Models in CPS-IoT Applications</a>
+                </div>
+                <div class="card-byline">Inesh Chakrabarti, Zejun Xiong, Pragya Sharma, Mani Srivastava</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  HoliBench提供面向CPS-IoT基础模型的跨平台基准与部署工具包，兼顾能效延迟内存。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.12412v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.12412v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对基础模型在嵌入式与边缘CPS-IoT平台部署时能效、延迟、内存与精度同等重要的需求，提出HoliBench跨平台基准与部署工具包。现有工具孤立评估模型能力，假设算力充足。核心创新是联合评估任务精度与硬件约束。结论为CPS-IoT场景下基础模型选型与部署提供实用基准，边缘推理相关性间接。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每周一 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周推送 · 2026年09月14日 ~ 2026年09月20日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Weekly Digest</div>
+    <h1>本周推送</h1>
+    <div class="meta">2026年09月14日 ~ 2026年09月20日 · 本周合集</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>9</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM quantization</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.21450v1" target="_blank">Understanding LLM Quantization through Activation-Guided Compensation and Orthogonal Residuals</a>
+                </div>
+                <div class="card-byline">Yamato Narita, Issei Sato</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  通过激活引导补偿与正交残差分析，深入理解LLM低比特量化误差。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.21450v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.21450v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究训练后权重-激活量化（PTQ），聚焦W4A4激进量化中激活离群值导致的量化分辨率下降问题。核心创新是提出激活引导的补偿方法与正交残差分析框架，系统梳理权重优化、通道缩放与正交旋转各自处理的误差成分及其关系。实验揭示了不同补偿技术的互补性，为设计更高效的LLM量化方案提供了理论指导。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    <span class="tag">INT4</span>
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.21704v1" target="_blank">SpecQuant: Speculative Decoding with Multi-Parent Quantization for Adaptive LLM Inference</a>
+                </div>
+                <div class="card-byline">Harish KB, Jagadeeswaran M, Pradheep P, Yuvanesh S, Sivakumar T</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SpecQuant结合投机解码与多父量化，实现免训练自适应LLM推理加速。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.21704v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.21704v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对本地LLM推理受算力与内存限制的问题，提出SpecQuant框架，将量化、投机解码与自适应推理结合。核心创新在于免训练的多父量化策略与自适应推理机制，无需重训练、逐架构调参或额外草稿模型。实验表明该方法在消费级硬件上显著提升推理速度，同时保持输出质量，验证了量化与投机解码协同加速的有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.20186v1" target="_blank">To Copy or Not to Copy: Controlling Speculative Decoding via Intrinsic Model Signals</a>
+                </div>
+                <div class="card-byline">Roy Eisenstadt, Ido Cohen, Edo Cohen-Karlik, Lior Wolf, Itamar Zimerman</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  利用模型内在信号控制神经草稿与复制策略，优化投机解码。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.20186v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.20186v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究投机解码（SD）中神经草稿与基于复制的草稿策略之间的权衡问题。核心创新是利用预训练模型的内在信号动态选择草稿策略，在复制密集型场景中发挥复制方法的高加速优势，同时在通用文本中保持神经草稿的鲁棒性。实验表明该方法在多种文本设置下均取得优于单一策略的加速效果，为投机解码的自适应草稿提供了新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.21827v1" target="_blank">RheoSampling: Resolving the One-Hot Dilemma in Stochastic Dynamic-Tree Speculative Decoding</a>
+                </div>
+                <div class="card-byline">Qiao Hu, Yepeng Weng, Bo Zhang, Takehisa Yairi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  RheoSampling解决随机动态树投机解码中的one-hot坍塌问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.21827v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.21827v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对随机解码（T&gt;0）下动态树投机解码（如EAGLE-3）中草稿分布坍缩为one-hot的问题展开研究。核心创新是提出RheoSampling方法，在保持树结构效率的同时恢复随机采样的多样性。实验表明该方法在随机解码场景下显著提升投机解码的接受率与加速比，弥补了现有动态树方法仅适用于贪婪解码的缺陷，推动了投机解码在实际生成任务中的适用性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.20734v1" target="_blank">On-Demand Attention: Language Models Know When to Recall</a>
+                </div>
+                <div class="card-byline">Haibo Feng, Ruiqi Liang, Hanyang Peng, Shiqi Yu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  按需注意力机制：语言模型可预判何时需要全局回忆以加速长上下文推理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.20734v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.20734v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长上下文推理中全注意力解码每步都读取全部历史的问题，发现预训练模型的解码状态已包含预测全局读取收益的信息。核心创新是提出On-Demand Attention（ODA），在全局读取前决定是否需要回忆，从而跳过无益的注意力计算。实验表明该方法在推理与智能体工作负载中显著降低长上下文推理开销，同时保持输出质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">on-device inference</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.21666v1" target="_blank">Samsone: A Family of Open Small Audio Language Models for On-Device Inference</a>
+                </div>
+                <div class="card-byline">Piotr Masztalski, Michał K. Grzeszczyk, Olaf Sikorski</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Samsone系列小型音频语言模型，专为端侧推理设计。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.21666v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.21666v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对大型音频语言模型参数庞大、难以满足隐私保护与低延迟需求的问题，提出面向边缘计算的小型音频语言模型家族Samsone。核心模型在保持音频理解能力的同时大幅压缩参数规模，适合端侧部署。实验表明该系列模型在音频任务上取得与更大模型可比的表现，同时显著降低推理延迟与内存占用，推动了隐私友好的端侧多模态推理。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">on-device inference</span>
+                    
+                    <span class="tag">LLM inference</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.21849v1" target="_blank">The Weight Is Over - Interactive Diffusion on Consumer GPUs</a>
+                </div>
+                <div class="card-byline">Frieder Ganz, Maximilian Müller</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  面向消费级GPU的扩散模型端侧推理，权衡性能、质量与模型体积。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.21849v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.21849v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注端侧推理中扩散模型部署的挑战，指出其内存密集、延迟敏感且需协调嵌入器、Transformer、解码器等多组件。核心工作是在消费级GPU上探索性能、生成质量与模型占用之间的权衡，覆盖尽可能多的客户端设备。研究为扩散模型在端侧的高效推理提供了实践性指导，并对比了与标准化LLM推理循环的差异。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantization-aware training</span>
+                    
+                    <span class="tag">INT8</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.20441v1" target="_blank">Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation</a>
+                </div>
+                <div class="card-byline">Fabian Schmalstieg, Karsten Mueller, Wojciech Samek</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  跨架构基础模型蒸馏，将三亿参数模型压缩至七十万用于边缘洪水分割。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.20441v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.20441v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文面向地理空间基础模型因体积过大难以部署于内存受限边缘硬件的问题，提出跨架构蒸馏方法。核心工作是将3亿参数的Prithvi-EO-2.0教师模型微调后，蒸馏至仅70万参数的EfficientViT-B0学生模型，并利用教师监督未标注Sentinel-2影像。实验表明学生模型在洪水分割任务上保持竞争力，同时满足边缘部署的内存与算力约束。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-18</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.21407v1" target="_blank">Quantization-Aware Kalman Estimation for Diffusion Sampling</a>
+                </div>
+                <div class="card-byline">Qitan Shi, Cheng Jin, Jiawei Zhang, Yuantao Gu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  量化感知卡尔曼估计用于扩散模型采样，补偿量化偏差。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.21407v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.21407v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究扩散模型量化部署中激进压缩导致输出偏离全精度的问题，聚焦采样阶段校正。核心创新是提出量化感知卡尔曼估计方法，利用轨迹信息而非仅局部信息进行偏差补偿，克服现有采样校正方法信息利用不足的缺陷。实验表明该方法在低比特量化下显著缩小量化输出与全精度输出的差距，提升生成质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每周一 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>

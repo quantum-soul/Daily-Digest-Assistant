@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周推送 · 2026年10月05日 ~ 2026年10月11日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Weekly Digest</div>
+    <h1>本周推送</h1>
+    <div class="meta">2026年10月05日 ~ 2026年10月11日 · 本周合集</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>9</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM quantization · post-training quantization · quantization-aware training · inference acceleration · model compression · speculative decoding · on-device inference · edge inference · LLM inference · token pruning · KV cache · PTQ · QAT · low-bit · INT4 · INT8 · quantized</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    <span class="tag">KV cache</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.13202v1" target="_blank">S^3R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding</a>
+                </div>
+                <div class="card-byline">Yuhang He, Hongyu Ge, Zihan Lin, Siyi Liu, Yongqi Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  S^3R：通过自稀疏投机解码实现快速忠实的强化学习rollout。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.13202v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.13202v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长上下文可验证奖励强化学习（RLVR）中快速rollout生成的需求，提出S^3R方法。研究发现注意力占自回归解码内核时间的72-76%，而直接稀疏策略采样会改变响应组。核心创新是自稀疏投机解码，在减少KV缓存流量的同时不改变策略优化所用的响应组。实验证明该方法实现了快速且忠实的rollout生成。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.13708v1" target="_blank">Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy</a>
+                </div>
+                <div class="card-byline">Naji Alazhar, Wassel Alazhar</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Adaptive DHiSparse：基于负载自适应KV层次结构的投机解码方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.13708v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.13708v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长上下文服务中KV内存先于硬件吞吐量耗尽的问题，提出Adaptive DHiSparse方法。该方法在层次化稀疏KV缓存上支持投机解码，并采用负载自适应的缓存预算而非固定预算。核心创新在于将投机解码与分层稀疏KV缓存结合，并动态调整缓存分配。实验证明该方法能有效提升长上下文场景下的服务吞吐量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">post-training quantization</span>
+                    
+                    <span class="tag">low-bit</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.13767v1" target="_blank">DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs</a>
+                </div>
+                <div class="card-byline">Mahsa Salmani, Sayeh Sharify, Hesham Mostafa</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  DualQuant：面向LLM的无校准双尺度权重与激活低比特量化方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.13767v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.13767v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对支持原生4比特的加速器上实现低比特推理需要同时量化权重和激活的问题展开研究。核心创新是提出DualQuant，一种双尺度、免校准的权重与激活量化方法，克服了激活量化通常依赖校准数据的难题。实验表明该方法在保持模型精度的同时实现了完整的吞吐量增益，为LLM的低比特推理部署提供了实用方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.12338v1" target="_blank">VFold: Symmetry-Aware Cross-Layer Value Cache Compression</a>
+                </div>
+                <div class="card-byline">Neha Verma, Sungwon Kim, Kenton Murray, Kevin Duh</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  VFold：对称性感知的跨层值缓存压缩方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.12338v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.12338v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长上下文场景下KV缓存主导内存使用的问题，研究通过利用层间缓存相似性来压缩内存的方法。核心创新是提出VFold，一种对称性感知的跨层值缓存合并技术，无需对LLM架构进行修改即可实现压缩。实验表明该方法能有效降低KV缓存内存占用，同时避免了现有技术所需的架构改动和大量开销。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">quantized</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.12444v1" target="_blank">Rounding in Preconditioner Space: Redesigning 4-bit AdamW Optimizer-State Quantization</a>
+                </div>
+                <div class="card-byline">Hanyang Li, Shao Tang, Daniel Thomas Braithwaite, Gregory Dexter, Leonardo Neves</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  在预条件子空间中进行舍入：重新设计4比特AdamW优化器状态量化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.12444v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.12444v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究AdamW优化器状态量化问题，量化误差会通过矩递推传播并扰动后续自适应更新。核心创新是从舍入空间视角重新设计4比特优化器状态量化，即量化器在相邻重建级别间选择的坐标空间，并对二阶矩进行局部分析。该工作为优化器状态的低比特量化提供了新的理论视角和实用改进。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">token pruning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.13263v1" target="_blank">SheafPrune: Sheaf-Guided Graph Propagation for Visual Token Pruning</a>
+                </div>
+                <div class="card-byline">Xiaoyang Ma, Chi Wang, Hong Sun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SheafPrune：基于层引导图传播的视觉token剪枝方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.13263v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.13263v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对多模态大语言模型处理完整视觉token序列导致预填充成本高的问题展开研究。核心创新是提出SheafPrune，利用层论引导的图传播进行视觉token剪枝，通过支持约束传播和节点度校正来建模token间关系的重要性传播。实验表明该方法能有效剪枝无关视觉token，降低预填充成本同时保持模型性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">INT4</span>
+                    
+                    <span class="tag">INT8</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.13447v1" target="_blank">Oído: Open-Vocabulary Speech Recognition on a $5 Microcontroller without a Neural Accelerator</a>
+                </div>
+                <div class="card-byline">Daniel Varela Sánchez, Guillermo Martín-Coello Juárez</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Oído：在5美元微控制器上实现无神经加速器的开放词汇语音识别。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.13447v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.13447v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对低成本微控制器上语音识别仅限于关键词识别的问题，提出Oído推理引擎。该引擎在ESP32-S3（无神经加速器）上完全运行开放词汇英语语音识别，执行13M参数的Conformer-CTC模型并使用int8权重。核心创新在于极受限硬件上的高效int8推理实现。实验证明在5美元微控制器上实现了开放词汇语音识别。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">speculative decoding</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.13778v1" target="_blank">ReplaySSM: Cache SSM Inputs, Not State</a>
+                </div>
+                <div class="card-byline">Ze-Wei Liou, Harris Nover, Amey Naik, Andrii Skliar, Igor Shovkun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ReplaySSM：缓存SSM输入而非状态以优化推理效率。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.13778v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.13778v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对状态空间模型（SSM）中每步解码读写固定大小递归状态造成瓶颈的问题展开研究。核心创新是提出ReplaySSM，通过展开递归来缓存SSM输入而非状态，避免了大量状态I/O和低算术强度问题，同时为投机解码提供廉价回滚。实验表明该方法减少了状态量化误差对后续递归更新的影响。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.13281v1" target="_blank">QCLR: A Plug-in Robustification Module via Quantization for Contrastive Learning in Self-Supervised Skeleton-Based Human Action Recognition</a>
+                </div>
+                <div class="card-byline">Nanzhu Chen, Feixiang He, Yunfeng Diao, Duygu Sarikaya, He Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  QCLR：通过量化实现自监督骨架动作识别对比学习的鲁棒化插件。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.13281v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.13281v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对自监督骨架动作识别中对比学习方法对对抗攻击脆弱的问题展开研究。核心创新是提出QCLR，一个通过量化实现的即插即用鲁棒化模块，用于增强对比学习的鲁棒性。该工作将量化技术应用于自监督学习领域而非LLM推理加速，属于量化的跨领域应用。实验表明该模块能有效提升模型对抗鲁棒性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每周一 12:00 推送<br>
+    
+    <a href="https://quantum-soul.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
